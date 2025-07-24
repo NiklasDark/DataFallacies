@@ -1,0 +1,528 @@
+\documentclass{beamer}
+\usepackage{graphicx} 
+\usetheme{Berlin} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\setbeamertemplate{footline}[frame number]
+\makeatletter
+\renewcommand{\footnotesize}{\tiny}
+\makeatother
+
+\title{Data Fallacies}
+\author{Lennart Dobs (340472), Niklas Dunkel (340715)}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Gliederung}
+\begin{itemize}
+    \item Definition Data Fallacies
+    \item Survivorship Bias
+    \item Base Rate Fallacy
+    \item Simpson's Paradox
+    \item Danger of Summary Metrics
+    \item False Causality
+    \item Quiz
+    \item Fazit und Abschluss
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Definition von Data Fallacies\footnote{Quelle: {Ogbonnaya et al. (2019). S. 297.}}}
+\begin{itemize}
+    \item Data Fallacies sind häufige Ursachen für Fehlinterpretationen von (statistischen) Daten
+    \item Diese Fehler können verschiedene Ursprünge haben und werden deshalb mit verschiedenen Fallacy-Arten beschrieben
+    \item Data Fallacies sind problematisch, da Fehlinterpretationen von Daten, je nach Anwendungsfall der Daten, weitreichende negative Folgen haben können.
+    \item Data Fallacies können auch absichtlich zur Manipulation der Dateninterpretation angewendet werden.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Survivorship Bias\footnote{Quelle: {Miller (2020).}}}
+\begin{itemize}
+    \item Basiert auf dem menschlichen Instinkt, von „Überlebenden“ bzw. „Gewinnern“ zu lernen
+    \item Beschreibt die Verzerrung, die entsteht, wenn bei der Analyse von Daten nur die „Gewinner“ betrachtet werden und die Gesamtheit nicht korrekt abgebildet wird
+    \item Fälschliche Schlussfolgerung: Eigenschaften oder gewissen Handlungen, die bei allen „Survivors“ vorliegen, haben zum „Überleben“ geführt
+    \item Dass „Verlierer“ diese Eigenschaften möglicherweise auch gehabt haben, welche aber in den Daten nicht auftauchen, wird vernachlässigt
+    \item Somit können falsche Schlussfolgerungen und Entscheidungen entstehen
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Survivorship Bias - Beispiel}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{SurvivorPlane.png}\footnote{Quelle: {© Martin Grandjean (vector) & McGeddon (picture). US Air Force (hit plot concept) / Survivorship Bias / CC BY-SA 4.0 (Ausschnitt). (o.J.).}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Survivorship Bias\footnote{Quelle: {Elston (2021).}}}
+\begin{itemize}
+    \item Weiteres Beispiel: Annahme, dass Dinge aus älteren Generationen langlebiger sind:
+    \item Nur Dinge, die wenig genutzt wurden oder von besonderer Qualität waren, können noch vorgefunden werden – Gegenstände, die nicht „überlebt“ haben, können nicht gesehen werden
+    \item Handlungsempfehlung: Vollständigkeit des Datensatzes hinterfragen
+    
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Survivorship Bias - Datensatz}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Survivorship Data.png}\footnote{Quelle: {Selbsterstellter Datensatz}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Survivorship Bias}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Survivorship 1.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Survivorship Bias}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Survivorship 2.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Survivorship Bias}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Survivorship 3.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Base Rate Fallacy\footnote{Quelle: {Flyvbjerg (2022).}}}
+\begin{itemize}
+    \item Aufgabe:
+    \item In einer Stadt gibt es nur Autos in zwei Farben: 85\% der Autos sind blau und 15\% sind grün.
+    \item Eine Person beobachtet einen Autounfall mit Fahrerflucht und behauptet, dass das Auto grün war.
+    \item Zeugen identifizieren die Farbe von Autos in 80\% der Fälle korrekt.
+    \item Wie groß ist die Wahrscheinlichkeit, dass das Auto tatsächlich grün war?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Base Rate Fallacy\footnote{Quelle: {Bar-Hillel (1979). S. 211.}}}
+\begin{itemize}
+    \item Beschreibt einen Fehler in der Beurteilung von Wahrscheinlichkeiten, der durch die Vernachlässigung von Basiswahrscheinlichkeiten entsteht, wenn eine Person spezifischere Informationen erhält
+    \item Menschen neigen dazu, unterbewusst vorhandene Informationen nach ihrer subjektiven Relevanz zu sortieren
+    \item Relevanz wird dabei meist dadurch bestimmt, wie spezifisch eine Information ist
+    \item In Entscheidungen und Beurteilungen werden meistens nur die subjektiv relevantesten Informationen berücksichtigt
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Base Rate Fallacy\footnote{Quelle: {Kahneman \& Tversky (1974). S. 1124.}}}
+\begin{itemize}
+    \item Grund für diese Art der Entscheidungsfindung sind Heuristiken
+    \item Eine Heuristik, die zu dem beschriebenen Ablauf führt, ist die Repräsentativitäts-Heuristik
+    \item Bei der Representativitäts-Heuristik bewerten Menschen die Relevanz einer Information basierend auf ihrer Ähnlichkeit zu dem untersuchten Objekt und blenden somit häufig Basiswahrscheinlichkeiten aus
+    \item Handlungsempfehlung: Hinterfragen, welche Basiswahrscheinlichkeit einer spezifischen Wahrscheinlichkeit zu Grunde liegt und diese einbinden oder WK mit Bayes-Regel berechnen
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Base Rate Fallacy - Datensatz}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\textwidth]{BR1.png}\footnote{Quelle: {Selbsterstellter Datensatz}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Base Rate Fallacy}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{BR2.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Base Rate Fallacy}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{BR3.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Base Rate Fallacy}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{BR4.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Simpson's Paradox\footnote{Quelle: {Ameringer et al. (2009). S. 2.}}}
+\begin{itemize}
+    \item Beschreibt Verzerrung, bei der ein Zusammenhang zwischen 2 Variablen erkennbar ist, welcher sich umkehrt, wenn die Daten in Gruppen geteilt werden
+    \item Dabei kehrt sich der Effekt in beiden Gruppen um oder ist nicht mehr zu erkennen
+    \item Simpson Paradoxon entsteht dabei durch eine verdeckte Störvariable (confounding variable)
+    \item Die Störvariable hängt dabei mit der Gruppenzugehörigkeit und dem Ergebnis zusammen.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Simpson's Paradox\footnote{Quelle: {Ameringer et al. (2009). S. 2.; Hintzman (1980) zitiert nach Ameringer et al. (2009). S. 2.; Hsu (1989) zitiert nach Ameringer et al. (2009). S. 2.}}}
+\begin{itemize}
+    \item Der wahre Effekt zwischen den beiden betrachteten Variablen wird damit erst aufgedeckt, wenn die Daten nach der Störvariable gruppiert werden
+    \item Erforderlich für Simpson Paradoxon: Störvariable muss erkennbaren Effekt auf die Variablen haben und ungleichmäßig auf Gruppen verteilt sein
+    \item Handlungsvorschlag: Korrelationen immer hinterfragen und nicht voreilig auf Kausalität schließen
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Simpson's Paradox}
+\begin{itemize}
+    \item Der wahre Effekt zwischen den beiden betrachteten Variablen wird damit erst aufgedeckt, wenn die Daten nach der Störvariable gruppiert werden\footnote{Quelle: {Ameringer et al. (2009). S. 2.}}
+    \item Erforderlich für Simpson Paradoxon: Störvariable muss erkennbaren Effekt auf die Variablen haben und ungleichmäßig auf Gruppen verteilt sein\footnote{Quelle: {Hintzman (1980) zitiert nach Ameringer et al. (2009). S. 2.}} \footnote{Quelle: {Hsu (1989) zitiert nach Ameringer et al. (2009). S. 2.}}
+    \item Handlungsvorschlag: Korrelationen immer hinterfragen und nicht voreilig auf Kausalität schließen
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Simpson's Paradox - Datensatz}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{SP1.png}\footnote{Quelle: \url{https://www.openintro.org/data/index.php?data=simpsons_paradox_covid}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Simpson's Paradox}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.35\textwidth]{SP2.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Simpson's Paradox}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{SP3.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Simpson's Paradox}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{SP4.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Danger of Summary Metrics}
+\begin{itemize}
+    \item Summary Metrics sind Aggregationsmaße von Daten bzw. zusammenfassende Metriken
+    \item Beispiele für Summary Metrics sind: arithmetisches Mittel, Median, Standardabweichung, Prozentwerte, KPIs, …
+    \item Das Problem von diesen ist, dass bei alleiniger Betrachtung dieser viele Informationen aus dem Datensatz nicht abgebildet sind, da bei der Zusammenfassung Details verloren gehen
+    \item Ausreißer, Unterschiede zwischen Gruppen, Verteilungen, etc. gehen verloren
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Danger of Summary Metrics - Anscombe’s Quartett}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\textwidth]{Danger1.png}\footnote{Quelle: {Anscombe (1973). S.19-20.}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Danger of Summary Metrics\footnote{Quelle: {Anscombe (1973). S. 17.}}}
+\begin{itemize}
+    \item Die vernachlässigten Informationen können für die Entscheidungsfindung von großer Bedeutung sein
+    \item Beispiele: durchschnittliches Einkommen, prozentuale Wirksamkeit von Medikamenten ohne Betrachtung von Gruppen, Erfolgsrate von Suchanfragen in einer App über alle Sprachen hinweg
+    \item Handlungsempfehlung: Entscheidungen nicht nur auf zusammenfassenden Metriken aufbauen; Graphiken (z.B. Streudiagramme) anschauen
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Danger of Summary Metrics - Datensatz}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{FS1.png}\footnote{Quelle: \url{https://waf.cs.illinois.edu/discovery/berkeley.csv}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Danger of Summary Metrics}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{FS3.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Danger of Summary Metrics}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{FS2.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Danger of Summary Metrics}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{FS10.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Danger of Summary Metrics}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{FS4.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Danger of Summary Metrics}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\textwidth]{FS9.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Danger of Summary Metrics}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{FS8.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{False Causality\footnote{Quelle: {Backhaus et al. (2022). S. 46.}}}
+\begin{itemize}
+    \item Korrelation ist nicht gleich Kausalität!
+    \item Das Auffinden kausaler Zusammenhänge ist eine wichtige Aufgabe in der Datenanalyse und ist vor allem für Prognosen und datengetriebene Entscheidungen relevant
+    \item Ein häufiger Fehler ist es, von einer Korrelation auf einen kausalen Zusammenhang zu schließen
+    \item Korrelationen ohne Kausalität nennt man Scheinkorrelationen
+    \item Scheinkorrelationen entstehen i.d.R. durch eine unbekannte Variable, die die Variablen X und Y beeinflusst
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{False Causality\footnote{Quelle: {Backhaus et al. (2022). S. 46.}}}
+\begin{itemize}
+    \item Beispiele für Korrelationen ohne Kausalität:
+    \item Geburtenrate und Storchpopulation
+    \item Schuhgröße von Schulkindern und deren Lesekompetenz
+    \item Hopfenerträge und Konsum von Bier
+    \item Kennt ihr noch weitere Korrelationen ohne Kausalität? Welche verdeckten Variablen könnten die beschriebenen Fälle verursachen?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{False Causality\footnote{Quelle: {Backhaus et al. (2022). S. 46-47.}}}
+\begin{itemize}
+    \item Handlungsempfehlung:
+    \item Korrelationskoeffizienten betrachten: passt die Richtung des Zusammenhangs; ist Zusammenhang stark genug?
+    \item Plausibilität prüfen: ist ein kausaler Zusammenhang logisch; gibt es einen zeitlichen Verzug in der Zeitreihe bei Ursache und Wirkung?
+    \item Alternative Hypothesen aufstellen: welche verdeckten Variablen könnte es geben, die X und Y beeinflussen?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{False Causality - Datensatz}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{FC0.png}\footnote{Quelle: {Selbsterstellter Datensatz}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{False Causality}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\textwidth]{FC2.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{False Causality}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{FC1.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{False Causality}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{FC4.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{False Causality}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{FC3.png}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Quiz}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\textwidth]{Menti2.PNG}\footnote{Quelle: {Eigene Darstellung}}
+    
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fazit und Abschluss}
+\begin{itemize}
+    \item Data Fallacies können zu datenbasierten Fehlentscheidungen führen, welche weitreichende Konsequenzen haben können
+    \item Um die Risiken von Data Fallacies zu vermeiden, ist es sinnvoll, diese zu kennen und stets zu prüfen, ob eine Fallacy oder mehrere vorliegen
+    
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\centering
+    \textbf{Vielen Dank für eure Aufmerksamkeit und Mitarbeit}
+\end{frame}
+
+\begin{frame}
+\frametitle{Literaturverzeichnis}
+\footnotesize
+\begin{itemize}
+    \item Ameringer, S., Serlin, R.\ C., \& Ward, S. (2009). \textit{Simpson’s Paradox and Experimental Research}. Nursing Research, 58(2), 123–127.
+    \url{https://doi.org/10.1097/NNR.0b013e318199b517}
+    \item Anscombe, F.\ J. (1973). \textit{Graphs in Statistical Analysis}. The American Statistician, 27(1), 17–21.  
+    \url{https://www.sjsu.edu/faculty/gerstman/StatPrimer/anscombe1973.pdf}
+    \item Backhaus, K., Erichson, B., Gensler, S., Weiber, R., \& Weiber, T. (2022). \textit{Multivariate Analysemethoden} (17. Aufl.). Springer Gabler.
+    \item Bar‑Hillel, M. (1980). \textit{The Base‑Rate Fallacy in Probability Judgements}. Acta Psychologica, 44, 211–233.  
+    \url{https://bear.warrington.ufl.edu/brenner/mar7588/Papers/barhillel-acta1980.pdf}
+    \item Elston, D. (2021). \textit{Survivorship Bias}. Journal of the American Academy of Dermatology, 1–2.  
+    \url{https://www.sciencedirect.com/science/article/abs/pii/S0190962221019861?fr=RR-2&ref=pdf_download&rr=94e38a7b2e1b4534}
+    \item Flyvbjerg, B. (2022, Februar 1). \textit{The Base‑Rate Fallacy}. Towards Data Science.  
+    \url{https://towardsdatascience.com/the-base-rate-fallacy-b94c0a1b9938/}
+    \item Grandjean, M., \& McGeddon. (o.\ J.). \textit{US Air Force (Hit Plot Concept)} [Graphic].
+    \item Hintzman, D.\ L. (1980). \textit{Simpson’s Paradox and the Analysis of Memory Retrieval}. Psychological Review, 87(4), 398--410. \url{https://www.researchgate.net/publication/20508020_Random_Sampling_Randomization_and_Equivalence_of_Contrasted_Groups_in_Psychotherapy_Outcome_Research}
+   
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Literaturverzeichnis}
+\footnotesize
+\begin{itemize}
+    \item Hsu, L.\ M. (1989). \textit{Random Sampling, Randomization, and Equivalence of Contrasted Groups in Psychotherapy Outcome Research}. Journal of Consulting and Clinical Psychology, 57(1), 131–137.  
+    \url{https://www.researchgate.net/publication/20508020_Random_Sampling_Randomization_and_Equivalence_of_Contrasted_Groups_in_Psychotherapy_Outcome_Research}
+    \item Kahneman, D., \& Tversky, A. (1974). \textit{Judgment under Uncertainty: Heuristics and Biases}. Science, New Series, 185(4157), 1124–1131.  
+    \url{http://www.jstor.org/stable/1738360}
+    \item Miller, B. (2020, August 29). \textit{How ‘survivorship bias’ can cause you to make mistakes}. BBC.  
+    \url{https://www.bbc.com/worklife/article/20200827-how-survivorship-bias-can-cause-you-to-make-mistakes}
+    \item Ogbonnaya, K.\ E., Okechi, B.\ C., \& Nwankwo, B.\ C. (2019). \textit{Statistical Fallacy: A Menace to the Field of Science}. International Journal of Scientific and Research Publications (IJSRP), 9(6), p9048.  
+    \url{https://doi.org/10.29322/IJSRP.9.06.2019.p9048}
+    \item OpenIntro. (n.d.). \textit{Simpson’s paradox and COVID-19 vaccine effectiveness}. OpenIntro.  
+    \url{https://www.openintro.org/data/index.php?data=simpsons_paradox_covid}
+    \item University of Illinois Urbana‑Champaign. (n.d.). \textit{UC Berkeley Admissions Data} [Berkeley Gender Bias Dataset]. Discovery: Illinois Data Science Initiative.  
+    \url{https://discovery.cs.illinois.edu/dataset/berkeley/}
+\end{itemize}
+\end{frame}
+
+\end{document}
